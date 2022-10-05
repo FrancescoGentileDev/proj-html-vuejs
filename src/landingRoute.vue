@@ -1,6 +1,6 @@
 <template>
   <div>
-  <section-component :gridColumn="4" :separator="1" :halfSection="true"  v-bind="sections[0]"/>
+  <section-component :gridColumn="4" :halfSection="true"  v-bind="sections[0]"/>
   </div>
 </template>
 

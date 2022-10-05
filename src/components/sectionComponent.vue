@@ -1,6 +1,6 @@
 <template>
   <section>
-
+    <context-component v-bind="top"/>
   </section>
 </template>
 
@@ -17,10 +17,8 @@ export default {
             type: Boolean,
             default: false,
         },
-        title: String,
-        subtitle: String,
+        top: Object,
         grids: Array,
-        separator: Number
 
     }
 
