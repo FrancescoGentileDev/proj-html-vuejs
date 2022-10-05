@@ -15,10 +15,10 @@ const ciccio = {
       type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
       elements: [
         {
-          image: String,
-          name: String,
-          subName: String,
-          subTitle: String,
+          icon: String,
+          title: String,
+          subtitle: String,
+          subtitle: String,
           social: {
             facebook: String,
             twitter: String,
@@ -42,24 +42,24 @@ const sections = [
         type: 0, //0 GRID OF ICON, 1 GRID OF PERSON
         elements: [
           {
-            image: "icon-1",
-            name: "Same day appointments",
-            subTitle: " consectetur adipiscing elit. Cras id sem",
+            icon: "icon-1.png",
+            title: "Same day appointments",
+            subtitle: " consectetur adipiscing elit. Cras id sem",
           },
           {
-            image: "icon-2",
-            name: "world class facilities",
-            subTitle: " consectetur adipiscing elit. Cras id sem",
+            icon: "icon-2.png",
+            title: "world class facilities",
+            subtitle: " consectetur adipiscing elit. Cras id sem",
           },
           {
-            image: "icon-3",
-            name: "expert doctors",
-            subTitle: " consectetur adipiscing elit. Cras id sem",
+            icon: "icon-3.png",
+            title: "expert doctors",
+            subtitle: " consectetur adipiscing elit. Cras id sem",
           },
           {
-            image: "icon-4",
-            name: "complementary therapies",
-            subTitle: " consectetur adipiscing elit. Cras id sem",
+            icon: "icon-4.png",
+            title: "complementary therapies",
+            subtitle: " consectetur adipiscing elit. Cras id sem",
           },
         ],
       },

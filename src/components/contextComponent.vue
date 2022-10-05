@@ -1,5 +1,6 @@
 <template>
   <article>
+  <img v-if="icon" :src="require(`@/assets/images/${icon}`)" />
   <h2>{{title}}</h2>
   <p>{{subtitle}}</p>
   </article>

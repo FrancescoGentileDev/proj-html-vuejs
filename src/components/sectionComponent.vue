@@ -1,13 +1,15 @@
 <template>
   <section>
     <context-component v-bind="top"/>
+    <grid-of-content v-for="(grid, index) in grids" :key="index" :grid="grid.elements" :type="grid.type" :gridColumn="gridColumn" />
   </section>
 </template>
 
 <script>
 import contextComponent from './contextComponent.vue'
+import GridOfContent from './gridOfContent.vue'
 export default {
-  components: { contextComponent },
+  components: { contextComponent, GridOfContent },
     props: {
         gridColumn: {
             type: Number,
@@ -26,8 +28,5 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    section {
-        border: 1px solid red;
-        width: 100vw; 
-    }
+
 </style>
