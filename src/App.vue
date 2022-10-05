@@ -1,16 +1,17 @@
 <template>
   <div id="app">
-    HELLO WORLD!
+    <landing-route />
   </div>
 </template>
 
 <script>
+import LandingRoute from './landingRoute.vue'
 
 
 export default {
   name: 'App',
   components: {
-
+    LandingRoute
   }
 }
 </script>
