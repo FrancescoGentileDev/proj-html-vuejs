@@ -5,11 +5,14 @@ const ciccio = {
     title: String,
     divider: Number, //0 Normal, 1 Styled
     subtitle: String,
-    callToAction: {
+    buttons: 
+    [
+    {
       isIcon: Boolean,
       text: String,
       link: String
-    },
+    }
+  ],
   },
   grids: [
     {
@@ -34,7 +37,6 @@ const ciccio = {
 
 const sections = [
   {
-
     top: {
       title: "Welcome to Avada Health",
       subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sem sit amet risus semper eleifend. Sed rhoncus ultrices aliquam.`,
@@ -116,7 +118,6 @@ const sections = [
               instagram: "https://instagram.com",
             },
           },
-
         ],
       },
     ],
@@ -183,17 +184,19 @@ const sections = [
     top: {
       icon: "icon-7.png",
       title: "TOUR OUR FACILITIES",
-      divider:0,
+      divider: 0,
       subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae`,
-      callToAction: {
-        isIcon: true,
-        text: "play-icon.png",
-        link: "#"
-      },
+      buttons: [
+        {
+          isIcon: true,
+          text: "play-icon.png",
+          link: "#",
+        },
+      ],
     },
-  }
+  },
 ];
 
 export default sections;
