@@ -230,7 +230,7 @@ const sections = [
             },
             buttons: [
               {
-                isIcon: Boolean,
+                isIcon: false,
                 text: "LEARN MORE",
                 link: "#",
               },
@@ -243,11 +243,11 @@ const sections = [
             laudantium, totam rem aperiam, eaque`,
             background: {
               isImage: false, //false solid, true img
-              text: "327EC7",
+              text: "3597C3",
             },
             buttons: [
               {
-                isIcon: Boolean,
+                isIcon: false,
                 text: "LEARN MORE",
                 link: "#",
               },
@@ -264,7 +264,7 @@ const sections = [
             },
             buttons: [
               {
-                isIcon: Boolean,
+                isIcon: false,
                 text: "LEARN MORE",
                 link: "#",
               },
@@ -272,6 +272,50 @@ const sections = [
           },
         ],
       },
+    ]
+  },
+  {
+    top: {
+      icon: "icon-7.png",
+      title: "TOUR OUR FACILITIES",
+      divider: 0,
+      subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
+      doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
+      inventore veritatis et quasi architecto beatae`,
+      background: {
+        isImage: true, 
+        text: "make-an-appointment.jpg",
+      },
+      form: true
+    },
+  },
+  {
+    top: {
+
+      background: {
+        isImage: true, 
+        text: "rgb-gradient-bar-for-logo-carrasel.jpg",
+      },
+    },
+    grids: [
+      {
+        type: 0,
+        elements: [
+          {
+            icon: "client-logos-1.png"
+          },
+          {
+            icon: "client-logos-2.png"
+          },
+          {
+            icon: "client-logos-3.png"
+          },
+          {
+            icon: "client-logos-4.png"
+          },
+        ]
+      }
+
     ]
   }
 

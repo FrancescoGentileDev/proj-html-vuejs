@@ -10,6 +10,10 @@
 
     <p>{{ subtitle }}</p>
 
+    <div class="formContact" v-if="form">
+        <form-component />
+    </div>
+
     <div class="callToAction">
         <a v-for="(button, index) in buttons" :key="index" href="button.link">
         <img v-if="button.isIcon" :src="require(`@/assets/images/${button.text}`)" alt="">
@@ -20,7 +24,10 @@
 </template>
 
 <script>
+import formComponent from './formComponent.vue';
 export default {
+  components: { formComponent },
+name: "contextComponent",
   props: {
     icon: String,
     title: String,
@@ -29,6 +36,10 @@ export default {
     },
     subtitle: String,
     buttons: Array,
+    form: {
+        type: Boolean,
+        default: false,
+    }
   },
 };
 </script>
@@ -64,7 +75,8 @@ export default {
         text-transform: uppercase;
         padding: 0.5rem 2rem;
         background-color: transparent;
-        border: 3px solid $white-color;
+        border: 3px solid $button-border-color;
+        color: $button-text-color
     }
   }
 }
