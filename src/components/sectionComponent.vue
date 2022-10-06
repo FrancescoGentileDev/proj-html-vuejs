@@ -1,9 +1,10 @@
 <template>
   <div class="background" :class="{ image: getBackgroundImage == 1 }" :style="getStyle">
-    <section :class="{ container: !noContainer }">
-      <context-component v-bind="top" />
+    <section :class="{ container: getContainer }">
+      <context-component v-if="top" v-bind="top" />
       <grid-of-content
         v-for="(grid, index) in grids"
+        @removeContainer="removeContainer"
         :key="index"
         :grid="grid.elements"
         :type="grid.type"
@@ -15,13 +16,18 @@
 
 <script>
 import contextComponent from "./contextComponent.vue";
-import GridOfContent from "./gridOfContent.vue";
+import gridOfContent from '@/components/gridOfContent'
 export default {
+  name: "sectionComponent",
+  components: { contextComponent, gridOfContent },
   data() {
-    return {};
+    return {
+      container: this.noContainer,
+    };
   },
   computed: {
     getBackgroundImage() {
+      if(this.top){
       let background = this.top.background;
       if (!background) {
         return -1;
@@ -29,9 +35,12 @@ export default {
       else if (background.isImage) {
         return 1;
       }
-      return 0;
+      return 0
+      }
+      return -1
     },
     getStyle() {
+        if(this.top){
       let background = this.getBackgroundImage;
       if (background===-1) {
         return {backgroundColor: "inherit"};
@@ -41,9 +50,18 @@ export default {
       }
 
       return {backgroundColor: "#"+this.top.background.text};
+      }
+      return false
     },
+    getContainer() {
+      return !this.container
+    }
   },
-  components: { contextComponent, GridOfContent },
+  methods: {
+    removeContainer() {
+      this.container = !this.container;
+    }
+  },
   props: {
     gridColumn: {
       type: Number,
@@ -68,7 +86,6 @@ export default {
 .background {
   &.image {
     background-size: cover;
-    height: 50vh;
     background-position-y: 50%;
     section {
       color: $white-color;
@@ -77,6 +94,7 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 3rem
     }
   }
 }

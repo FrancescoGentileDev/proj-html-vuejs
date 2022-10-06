@@ -16,6 +16,15 @@
         v-bind="item"
       />
     </div>
+    <div class="recursiveSection" v-else-if="type === 2">
+      <section-component
+        class="grid section"
+        v-for="(item, index) in grid"
+        :key="index"
+        v-bind="{top: item}"
+        :noContainer="true"
+      />
+    </div>
   </div>
 </template>
 
@@ -24,20 +33,35 @@ import contextComponent from "./contextComponent.vue";
 import PersonCardComponent from "./personCardComponent.vue";
 
 export default {
-  components: { contextComponent, PersonCardComponent },
+  name: "gridOfContent",
+
+  components: { contextComponent, PersonCardComponent},
   props: {
     grid: Array,
-    type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
+    type: Number, //0 GRID OF ICON, 1 GRID OF PERSON, 2 grid of section
     gridColumn: Number,
   },
   mounted() {
-    console.log("mount");
+    if(this.type === 2) {
+      this.$emit("removeContainer", true)
+    }
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/variables.scss";
+
+.recursiveSection {
+ display: flex;
+ flex-grow: 1;
+ :deep(.context) {
+  max-width: inherit;
+  color: $band-text-color;
+  padding: 1rem;
+ }
+}
+
 
 .gridContent {
   display: flex;
