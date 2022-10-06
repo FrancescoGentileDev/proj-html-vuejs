@@ -50,6 +50,7 @@ export default {
 @import "@/variables.scss";
 
 article {
+  background-color: $white-color;
   .img-container {
     img {
       width: 100%;

@@ -1,3 +1,62 @@
+/* eslint-disable no-unused-vars */
+
+
+class section {
+  top =
+  {
+    icon: String,
+    title: String,
+    divider: Number, //0 Normal, 1 Styled
+    subtitle: String,
+    background: {
+    isImage: Boolean, //0 solid, 1 img
+      text: String,
+    },
+    buttons: [
+      {
+        isIcon: Boolean,
+        text: String,
+        link: String,
+      },
+    ],
+  }
+  grids = [
+    {
+      type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
+      elements: [
+        {
+          icon: String,
+          title: String,
+          divider: Number, //0 Normal, 1 Styled
+          subtitle: String,
+          paragraph: String,
+          background: {
+            isImage: Boolean, //0 solid, 1 img
+            text: String,
+          },
+          buttons: [
+            {
+              isIcon: Boolean,
+              text: String,
+              link: String,
+            },
+          ],
+          social: {
+            facebook: String,
+            twitter: String,
+            instagram: String,
+          },
+        },
+      ],
+    },
+ ]
+ 
+  constructor() { }
+  
+
+
+}
+
 /*const ciccio = {
   top: {
     icon: String,
@@ -90,6 +149,10 @@ const sections = [
       divider: 0, //0 Normal, 1 Styled
       subtitle:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, blanditiis voluptatum! Facilis iure ipsa veritatis quasi quidem consectetur",
+      background: {
+        isImage: false,
+        text: "f1efef"
+      }
     },
     grids: [
       {
@@ -194,6 +257,7 @@ const sections = [
     ],
   },
   {
+    jumbo: true,
     top: {
       icon: "icon-7.png",
       title: "TOUR OUR FACILITIES",
@@ -201,8 +265,10 @@ const sections = [
       subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae`,
+      
+
       background: {
-        isImage: true, 
+        isImage: true,
         text: "paralax-bg-tour-facilities.jpg",
       },
       buttons: [
@@ -226,6 +292,7 @@ const sections = [
             laudantium, totam rem aperiam, eaque`,
             background: {
               isImage: false, //false solid, true img
+             
               text: "3AAFBF",
             },
             buttons: [

@@ -46,7 +46,11 @@ export default {
         return {backgroundColor: "inherit"};
       }
       if(background===1) {
-        return {backgroundImage: `url(${require("@/assets/images/"+this.top.background.text)})`};
+        let bg = {backgroundImage: `url(${require("@/assets/images/"+this.top.background.text)})`};
+        if(this.jumbo) bg.height = "70vh"
+
+        return bg
+
       }
 
       return {backgroundColor: "#"+this.top.background.text};
@@ -77,16 +81,19 @@ export default {
     },
     top: Object,
     grids: Array,
+    jumbo: Boolean
   },
 };
 </script>
 
 <style lang="scss" scoped>
 @import "@/variables.scss";
+
 .background {
   &.image {
     background-size: cover;
     background-position-y: 50%;
+    background-attachment: fixed;
     section {
       color: $white-color;
       display: flex;
@@ -94,7 +101,6 @@ export default {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 3rem
     }
   }
 }

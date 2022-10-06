@@ -15,12 +15,15 @@ export default {
   }
 }
 </script>
-
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700;900&display=swap');
+</style>
 <style lang="scss">
 @import "/node_modules/bootstrap/scss/bootstrap.scss";
 @import "@/variables.scss";
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
