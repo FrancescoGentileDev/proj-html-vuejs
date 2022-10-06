@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section :class="{container: !noContainer}">
     <context-component v-bind="top"/>
     <grid-of-content v-for="(grid, index) in grids" :key="index" :grid="grid.elements" :type="grid.type" :gridColumn="gridColumn" />
   </section>
@@ -21,12 +21,20 @@ export default {
         },
         top: Object,
         grids: Array,
+        noContainer: {
+            type: Boolean,
+            default: false
+        }
 
     }
+
 
 }
 </script>
 
 <style lang="scss" scoped>
+.container {
+  max-width: 1300px;
+}
 
 </style>
