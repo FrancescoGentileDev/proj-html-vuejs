@@ -13,7 +13,7 @@
     <div class="callToAction">
         <a v-for="(button, index) in buttons" :key="index" href="button.link">
         <img v-if="button.isIcon" :src="require(`@/assets/images/${button.text}`)" alt="">
-        <p v-else>{{button.text}}</p>
+        <button v-else>{{button.text}}</button>
         </a>
     </div>
   </article>
@@ -59,6 +59,13 @@ export default {
     justify-content: center;
     gap: 1rem;
     margin: 1.5rem 0;
+
+    button {
+        text-transform: uppercase;
+        padding: 0.5rem 2rem;
+        background-color: transparent;
+        border: 3px solid $white-color;
+    }
   }
 }
 </style>

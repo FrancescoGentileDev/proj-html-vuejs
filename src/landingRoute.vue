@@ -1,6 +1,6 @@
 <template>
   <div>
-  <section-component v-for="(section, index) in sections" :key="index" :gridColumn="index === 0? 4: 3" :halfSection="true"  v-bind="section"/>
+  <section-component v-for="(section, index) in sections" :key="index" :gridColumn="index === 0? 4: 3"  v-bind="section"/>
   
   </div>
 </template>

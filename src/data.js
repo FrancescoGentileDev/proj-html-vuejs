@@ -1,18 +1,20 @@
-/*
-const ciccio = {
+/*const ciccio = {
   top: {
     icon: String,
     title: String,
     divider: Number, //0 Normal, 1 Styled
     subtitle: String,
-    buttons: 
-    [
-    {
-      isIcon: Boolean,
+    background: {
+      isImage: Boolean, //0 solid, 1 img
       text: String,
-      link: String
-    }
-  ],
+    },
+    buttons: [
+      {
+        isIcon: Boolean,
+        text: String,
+        link: String,
+      },
+    ],
   },
   grids: [
     {
@@ -21,8 +23,20 @@ const ciccio = {
         {
           icon: String,
           title: String,
+          divider: Number, //0 Normal, 1 Styled
           subtitle: String,
           paragraph: String,
+          background: {
+            isImage: Boolean, //0 solid, 1 img
+            text: String,
+          },
+          buttons: [
+            {
+              isIcon: Boolean,
+              text: String,
+              link: String,
+            },
+          ],
           social: {
             facebook: String,
             twitter: String,
@@ -32,8 +46,7 @@ const ciccio = {
       ],
     },
   ],
-};
-*/
+};*/
 
 const sections = [
   {
@@ -188,6 +201,10 @@ const sections = [
       subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae`,
+      background: {
+        isImage: true, 
+        text: "paralax-bg-tour-facilities.jpg",
+      },
       buttons: [
         {
           isIcon: true,
@@ -197,6 +214,67 @@ const sections = [
       ],
     },
   },
+  {
+    grids: [
+      {
+        type: 2, //0 GRID OF ICON, 1 GRID OF PERSON, 2 GRID OF SECTION
+        elements: [
+          {
+            title: "Emergency Care",
+            divider: 1, //0 Normal, 1 Styled
+            subtitle: `Sed ut perspicatis unde omnis iste natuserfor it voluptatem accusantium daloremque
+            laudantium, totam rem aperiam, eaque`,
+            background: {
+              isImage: false, //false solid, true img
+              text: "3AAFBF",
+            },
+            buttons: [
+              {
+                isIcon: Boolean,
+                text: "LEARN MORE",
+                link: "#",
+              },
+            ],
+          },
+          {
+            title: "expert diagnostics",
+            divider: 1, //0 Normal, 1 Styled
+            subtitle: `Sed ut perspicatis unde omnis iste natuserfor it voluptatem accusantium daloremque
+            laudantium, totam rem aperiam, eaque`,
+            background: {
+              isImage: false, //false solid, true img
+              text: "327EC7",
+            },
+            buttons: [
+              {
+                isIcon: Boolean,
+                text: "LEARN MORE",
+                link: "#",
+              },
+            ],
+          },
+          {
+            title: "Superb Rehabilitation",
+            divider: 1, //0 Normal, 1 Styled
+            subtitle: `Sed ut perspicatis unde omnis iste natuserfor it voluptatem accusantium daloremque
+            laudantium, totam rem aperiam, eaque`,
+            background: {
+              isImage: false, //false solid, true img
+              text: "327EC7",
+            },
+            buttons: [
+              {
+                isIcon: Boolean,
+                text: "LEARN MORE",
+                link: "#",
+              },
+            ],
+          },
+        ],
+      },
+    ]
+  }
+
 ];
 
 export default sections;
