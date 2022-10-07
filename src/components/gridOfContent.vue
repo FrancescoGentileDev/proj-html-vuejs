@@ -2,18 +2,21 @@
   <div>
     <div class="gridContent" v-if="type === 0">
       <context-component
+        
         class="grid context"
         v-for="(item, index) in grid"
         :key="index"
-        v-bind="item"
+        v-bind="item" 
+        data-aos="fade-up" data-aos-duration="1000"  :data-aos-delay="(index*150)" data-aos-once="true"
       />
     </div>
-    <div class="gridContent" v-else-if="type === 1">
+    <div class="gridContent" v-else-if="type === 1" >
       <person-card-component
         class="grid person"
         v-for="(item, index) in grid"
         :key="index"
         v-bind="item"
+        data-aos="flip-right" data-aos-duration="1000"    :data-aos-delay="(index*200)" data-aos-once="true"
       />
     </div>
     <div class="recursiveSection" v-else-if="type === 2">

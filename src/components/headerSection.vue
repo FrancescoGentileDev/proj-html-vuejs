@@ -12,13 +12,14 @@
       </ul>
     </nav>
 
-    <header class="jumbo" :style="getBackground">
-      <div class="container">
-        <h1>
+    <header class="jumbo" :style="getBackground" data-aos="zoom-in-down" data-aos-duration="1000">
+      <div class="container" >
+        <h1 data-aos="zoom-out" data-aos-duration="2500" data-aos-offset="400px">
           {{ getTitle.normal }} <span class="color">{{ getTitle.colored }}</span>
         </h1>
-        <p>{{ subtitle }}</p>
-        <button v-for="(button, index) in buttons" :key="index">
+
+        <p data-aos="fade-right" data-aos-duration="1500" data-aos-delay="1200">{{ subtitle }}</p>
+        <button v-for="(button, index) in buttons" :key="index" data-aos="flip-down" data-aos-duration="1000"  data-aos-delay="1900">
           <a :href="button.link">{{ button.text }}</a>
         </button>
       </div>
@@ -77,6 +78,23 @@ export default {
 <style lang="scss" scoped>
 @import "@/variables.scss";
 
+.title-enter-active,
+.title-leave-active {
+    transition: all .5 ease;
+}
+
+.title-enter-from,
+.title-leave-to {
+    
+}
+
+
+
+
+
+
+
+
 button {
   align-self: flex-start;
   background-color: $header-button-color;
@@ -96,6 +114,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   top: 0;
+  z-index: 10;
   transition: top 0.4s linear;
   &.addBackground {
     background-color: rgba($context-subtile-color, 0.2);
@@ -111,7 +130,7 @@ nav {
   }
 }
 .jumbo {
-  height: 90vh;
+  height: 100vh;
 }
 
 .container {

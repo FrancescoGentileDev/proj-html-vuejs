@@ -1,33 +1,61 @@
 <template>
   <article class="context">
-    <img v-if="icon" :src="require(`@/assets/images/${icon}`)" />
-    <h2 v-if="title">{{ title }}</h2>
+    <img v-if="icon" :src="require(`@/assets/images/${icon}`)"
+          data-aos="zoom-out"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-duration="2000"
+      data-aos-once="true"
+      data-aos-easing="ease-in-out"
+    
+     />
+
+    <h2
+      v-if="title"
+      data-aos="slide-down"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-duration="1000"
+      data-aos-delay="200"
+      data-aos-once="true"
+      data-aos-easing="ease-in"
+    >
+      {{ title }}
+    </h2>
 
     <div class="divider" v-if="divider !== undefined">
       <hr v-if="divider == 0" />
-      <img v-else :src="require(`@/assets/images/wave-divider.png`)" alt="">
+      <img v-else :src="require(`@/assets/images/wave-divider.png`)" alt="" />
     </div>
 
-    <p v-if="subtitle">{{ subtitle }}</p>
+    <p
+      v-if="subtitle"
+      data-aos="fade"
+      data-aos-anchor-placement="bottom-bottom"
+      data-aos-duration="1000"
+      data-aos-delay="400"
+      data-aos-once="true"
+      data-aos-easing="ease-out-quart"
+    >
+      {{ subtitle }}
+    </p>
 
     <div class="formContact" v-if="form">
-        <form-component />
+      <form-component />
     </div>
 
     <div class="callToAction" v-if="buttons">
-        <a v-for="(button, index) in buttons" :key="index" href="button.link">
-        <img v-if="button.isIcon" :src="require(`@/assets/images/${button.text}`)" alt="">
-        <button v-else>{{button.text}}</button>
-        </a>
+      <a v-for="(button, index) in buttons" :key="index" href="button.link">
+        <img v-if="button.isIcon" :src="require(`@/assets/images/${button.text}`)" alt="" />
+        <button v-else>{{ button.text }}</button>
+      </a>
     </div>
   </article>
 </template>
 
 <script>
-import formComponent from './formComponent.vue';
+import formComponent from "./formComponent.vue";
 export default {
   components: { formComponent },
-name: "contextComponent",
+  name: "contextComponent",
   props: {
     icon: String,
     title: String,
@@ -37,9 +65,9 @@ name: "contextComponent",
     subtitle: String,
     buttons: Array,
     form: {
-        type: Boolean,
-        default: false,
-    }
+      type: Boolean,
+      default: false,
+    },
   },
 };
 </script>
@@ -62,8 +90,7 @@ name: "contextComponent",
     }
   }
   h2 {
-    margin: 1.2rem
-    
+    margin: 1.2rem;
   }
   .callToAction {
     display: flex;
@@ -72,11 +99,11 @@ name: "contextComponent",
     margin: 1.5rem 0;
 
     button {
-        text-transform: uppercase;
-        padding: 0.5rem 2rem;
-        background-color: transparent;
-        border: 3px solid $button-border-color;
-        color: $button-text-color
+      text-transform: uppercase;
+      padding: 0.5rem 2rem;
+      background-color: transparent;
+      border: 3px solid $button-border-color;
+      color: $button-text-color;
     }
   }
 }
