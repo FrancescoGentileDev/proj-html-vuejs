@@ -1,15 +1,13 @@
 /* eslint-disable no-unused-vars */
 
-
 class section {
-  top =
-  {
+  top = {
     icon: String,
     title: String,
     divider: Number, //0 Normal, 1 Styled
     subtitle: String,
     background: {
-    isImage: Boolean, //0 solid, 1 img
+      isImage: Boolean, //0 solid, 1 img
       text: String,
     },
     buttons: [
@@ -19,7 +17,7 @@ class section {
         link: String,
       },
     ],
-  }
+  };
   grids = [
     {
       type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
@@ -49,12 +47,9 @@ class section {
         },
       ],
     },
- ]
- 
-  constructor() { }
-  
+  ];
 
-
+  constructor() {}
 }
 
 /*const ciccio = {
@@ -113,6 +108,7 @@ const sections = [
       title: "Welcome to Avada Health",
       subtitle: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras id sem sit amet risus semper eleifend. Sed rhoncus ultrices aliquam.`,
     },
+    gridColumn: 4,
     grids: [
       {
         type: 0, //0 GRID OF ICON, 1 GRID OF PERSON
@@ -143,16 +139,16 @@ const sections = [
   },
 
   {
+    background: {
+      isImage: false,
+      text: "f1efef",
+    },
     top: {
       icon: "icon-5.png",
       title: "MEET OUR DOCTOR",
       divider: 0, //0 Normal, 1 Styled
       subtitle:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, blanditiis voluptatum! Facilis iure ipsa veritatis quasi quidem consectetur",
-      background: {
-        isImage: false,
-        text: "f1efef"
-      }
     },
     grids: [
       {
@@ -258,6 +254,10 @@ const sections = [
   },
   {
     jumbo: true,
+    background: {
+      isImage: true,
+      text: "paralax-bg-tour-facilities.jpg",
+    },
     top: {
       icon: "icon-7.png",
       title: "TOUR OUR FACILITIES",
@@ -265,12 +265,7 @@ const sections = [
       subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae`,
-      
 
-      background: {
-        isImage: true,
-        text: "paralax-bg-tour-facilities.jpg",
-      },
       buttons: [
         {
           isIcon: true,
@@ -292,7 +287,7 @@ const sections = [
             laudantium, totam rem aperiam, eaque`,
             background: {
               isImage: false, //false solid, true img
-             
+
               text: "3AAFBF",
             },
             buttons: [
@@ -339,9 +334,13 @@ const sections = [
           },
         ],
       },
-    ]
+    ],
   },
   {
+    background: {
+      isImage: true,
+      text: "make-an-appointment.jpg",
+    },
     top: {
       icon: "icon-7.png",
       title: "TOUR OUR FACILITIES",
@@ -349,43 +348,78 @@ const sections = [
       subtitle: `Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
       doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
       inventore veritatis et quasi architecto beatae`,
-      background: {
-        isImage: true, 
-        text: "make-an-appointment.jpg",
-      },
-      form: true
+
+      form: true,
     },
   },
   {
-    top: {
-
-      background: {
-        isImage: true, 
-        text: "rgb-gradient-bar-for-logo-carrasel.jpg",
-      },
+    gridColumn: 4,
+    background: {
+      isImage: true,
+      text: "rgb-gradient-bar-for-logo-carrasel.jpg",
     },
+    noContainer: true,
     grids: [
       {
         type: 0,
         elements: [
           {
-            icon: "client-logos-1.png"
+            icon: "client-logos-1.png",
           },
           {
-            icon: "client-logos-2.png"
+            icon: "client-logos-2.png",
           },
           {
-            icon: "client-logos-3.png"
+            icon: "client-logos-3.png",
           },
           {
-            icon: "client-logos-4.png"
+            icon: "client-logos-4.png",
           },
-        ]
-      }
-
-    ]
-  }
-
+        ],
+      },
+    ],
+  },
 ];
 
-export default sections;
+const header = {
+  background: "header-image-homepage.jpg",
+  title: "Caring /For Life",
+  subtitle: `Kind words can be short and easy to speak, but their echoes are truly
+      endless. Avada Health focuses on you s i it was our own family.`,
+  buttons: [
+    {
+      isIcon: false,
+      text: "LEARN MORE",
+      link: "#",
+    },
+  ],
+};
+
+const nav = {
+  logo: "medical_logo_1x_light.png",
+  routes: [
+    {
+      link: "#",
+      text: "Home"  
+    },
+    {
+      link: "#",
+      text: "About"  
+    },
+    {
+      link: "#",
+      text: "Department"  
+    },
+    {
+      link: "#",
+      text: "Articles"  
+    },
+    {
+      link: "#",
+      text: "Make Appointment",
+      button: true,
+    },
+  ]
+}
+
+export { sections, header, nav };

@@ -21,7 +21,7 @@
         class="grid section"
         v-for="(item, index) in grid"
         :key="index"
-        v-bind="{top: item}"
+        v-bind="{top: item, background: item.background}"
         :noContainer="true"
       />
     </div>
@@ -86,6 +86,7 @@ export default {
       @at-root {
         .gridContent {
             $gap : 2rem;
+//            padding-bottom: 1.5rem;
           gap: $gap;
           .grid {
             width: calc(100% / v-bind(gridColumn) - $gap);

@@ -1,15 +1,21 @@
 <template>
   <div class="background" :class="{ image: getBackgroundImage == 1 }" :style="getStyle">
     <section :class="{ container: getContainer }">
-      <context-component v-if="top" v-bind="top" />
-      <grid-of-content
+     <div class="context" v-if="top!== undefined">
+      <context-component  v-bind="top" />
+     </div>
+      <div class="grid" v-if="grids!==undefined">
+            <grid-of-content
+        
         v-for="(grid, index) in grids"
         @removeContainer="removeContainer"
         :key="index"
         :grid="grid.elements"
         :type="grid.type"
         :gridColumn="gridColumn"
-      />
+      /> 
+      </div>
+
     </section>
   </div>
 </template>
@@ -27,8 +33,8 @@ export default {
   },
   computed: {
     getBackgroundImage() {
-      if(this.top){
-      let background = this.top.background;
+      if(this.background){
+      let background = this.background;
       if (!background) {
         return -1;
       } 
@@ -40,20 +46,20 @@ export default {
       return -1
     },
     getStyle() {
-        if(this.top){
+        if(this.background){
       let background = this.getBackgroundImage;
       if (background===-1) {
         return {backgroundColor: "inherit"};
       }
       if(background===1) {
-        let bg = {backgroundImage: `url(${require("@/assets/images/"+this.top.background.text)})`};
+        let bg = {backgroundImage: `url(${require("@/assets/images/"+this.background.text)})`};
         if(this.jumbo) bg.height = "70vh"
 
         return bg
 
       }
 
-      return {backgroundColor: "#"+this.top.background.text};
+      return {backgroundColor: "#"+this.background.text};
       }
       return false
     },
@@ -79,9 +85,14 @@ export default {
       type: Boolean,
       default: false,
     },
+    header: {
+      type: Boolean,
+      default: false,
+    },
     top: Object,
     grids: Array,
-    jumbo: Boolean
+    jumbo: Boolean,
+    background: Object,
   },
 };
 </script>
@@ -106,6 +117,6 @@ export default {
 }
 
 .container {
-  max-width: 1300px;
+  padding: 4rem 0;
 }
 </style>

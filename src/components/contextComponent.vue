@@ -1,20 +1,20 @@
 <template>
   <article class="context">
     <img v-if="icon" :src="require(`@/assets/images/${icon}`)" />
-    <h2>{{ title }}</h2>
+    <h2 v-if="title">{{ title }}</h2>
 
     <div class="divider" v-if="divider !== undefined">
       <hr v-if="divider == 0" />
       <img v-else :src="require(`@/assets/images/wave-divider.png`)" alt="">
     </div>
 
-    <p>{{ subtitle }}</p>
+    <p v-if="subtitle">{{ subtitle }}</p>
 
     <div class="formContact" v-if="form">
         <form-component />
     </div>
 
-    <div class="callToAction">
+    <div class="callToAction" v-if="buttons">
         <a v-for="(button, index) in buttons" :key="index" href="button.link">
         <img v-if="button.isIcon" :src="require(`@/assets/images/${button.text}`)" alt="">
         <button v-else>{{button.text}}</button>
