@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import {sections, header, nav} from "@/data"
+import {sections, header, nav, footer} from "@/data"
 import headerSection from './components/headerSection.vue'
 
 export default {
@@ -18,7 +18,8 @@ export default {
     return {
       sections,
       header,
-      nav
+      nav,
+      footer
     }
   },
 

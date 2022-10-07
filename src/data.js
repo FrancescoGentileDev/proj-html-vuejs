@@ -1,57 +1,5 @@
 /* eslint-disable no-unused-vars */
 
-class section {
-  top = {
-    icon: String,
-    title: String,
-    divider: Number, //0 Normal, 1 Styled
-    subtitle: String,
-    background: {
-      isImage: Boolean, //0 solid, 1 img
-      text: String,
-    },
-    buttons: [
-      {
-        isIcon: Boolean,
-        text: String,
-        link: String,
-      },
-    ],
-  };
-  grids = [
-    {
-      type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
-      elements: [
-        {
-          icon: String,
-          title: String,
-          divider: Number, //0 Normal, 1 Styled
-          subtitle: String,
-          paragraph: String,
-          background: {
-            isImage: Boolean, //0 solid, 1 img
-            text: String,
-          },
-          buttons: [
-            {
-              isIcon: Boolean,
-              text: String,
-              link: String,
-            },
-          ],
-          social: {
-            facebook: String,
-            twitter: String,
-            instagram: String,
-          },
-        },
-      ],
-    },
-  ];
-
-  constructor() {}
-}
-
 /*const ciccio = {
   top: {
     icon: String,
@@ -103,6 +51,7 @@ class section {
 };*/
 
 const sections = [
+  //SECTION 1
   {
     top: {
       title: "Welcome to Avada Health",
@@ -137,7 +86,7 @@ const sections = [
       },
     ],
   },
-
+  //SECTION 2
   {
     background: {
       isImage: false,
@@ -194,6 +143,7 @@ const sections = [
       },
     ],
   },
+  //SECTION 3
   {
     top: {
       icon: "icon-6.png",
@@ -252,6 +202,7 @@ const sections = [
       },
     ],
   },
+  //SECTION 4
   {
     jumbo: true,
     background: {
@@ -275,6 +226,7 @@ const sections = [
       ],
     },
   },
+  //SECTION 5
   {
     grids: [
       {
@@ -336,6 +288,7 @@ const sections = [
       },
     ],
   },
+  //SECTION 6
   {
     background: {
       isImage: true,
@@ -352,6 +305,7 @@ const sections = [
       form: true,
     },
   },
+  //SECTION 7
   {
     gridColumn: 4,
     background: {
@@ -400,26 +354,61 @@ const nav = {
   routes: [
     {
       link: "#",
-      text: "Home"  
+      text: "Home",
     },
     {
       link: "#",
-      text: "About"  
+      text: "About",
     },
     {
       link: "#",
-      text: "Department"  
+      text: "Department",
     },
     {
       link: "#",
-      text: "Articles"  
+      text: "Articles",
     },
     {
       link: "#",
       text: "Make Appointment",
       button: true,
     },
-  ]
-}
+  ],
+};
 
-export { sections, header, nav };
+const footer = [
+  {
+    logo: "",
+    text: "",
+    subtitle: "learn more about us",
+    social: {
+      facebook: "https://facebook.com",
+      twitter: "https://twitter.com",
+      instagram: "https://instagram.com",
+      youtube: "https://youtube.com",
+    },
+  },
+  {
+    title: "contact information",
+    divider: 0,
+    contact: {
+      position: "121 King street, United Kingdom",
+      phone: "1234567890",
+    },
+  },
+  {
+    title: "medical departments",
+    divider: 0,
+    sections: [
+      "Cardiology",
+      "pediatrics",
+      "diabetes care",
+      "re-natel care",
+      "ultrasound echocardiogram",
+    ],
+    buttons: [
+      "view our departments",
+    ]
+  }
+];
+export { sections, header, nav, footer };
