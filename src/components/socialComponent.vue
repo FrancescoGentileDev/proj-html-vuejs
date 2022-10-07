@@ -26,7 +26,6 @@ export default {
 .root {
   display: flex;
   gap: 1rem;
-  margin-top: 2rem; 
 }
 .social-link {
   font-size: 2rem;

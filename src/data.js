@@ -378,8 +378,11 @@ const nav = {
 
 const footer = [
   {
-    logo: "",
-    text: "",
+    logo: "medical_logo_1x_dark.png",
+    text: `Sed ut perspiciais unde omnisse natus eror st volupatem accusantium dolernue
+    launtitotam aperiam, caque psa quae abil. nventeveias et quas architect beatae:
+    uptatem accusantum,remaperiamsiat. Voluptatem accusestetsium doloremaue.
+    Taudaen.Lorern psum isdolores efsunser.`,
     subtitle: "learn more about us",
     social: {
       facebook: "https://facebook.com",
@@ -390,7 +393,7 @@ const footer = [
   },
   {
     title: "contact information",
-    divider: 0,
+    divider: true,
     contact: {
       position: "121 King street, United Kingdom",
       phone: "1234567890",
@@ -398,17 +401,15 @@ const footer = [
   },
   {
     title: "medical departments",
-    divider: 0,
-    sections: [
+    divider: true,
+    others: [
       "Cardiology",
       "pediatrics",
       "diabetes care",
       "re-natel care",
       "ultrasound echocardiogram",
     ],
-    buttons: [
-      "view our departments",
-    ]
-  }
+    buttons: ["view our departments"],
+  },
 ];
 export { sections, header, nav, footer };
