@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 
-/*const ciccio = {
+/*{
   top: {
     icon: String,
     title: String,
@@ -20,7 +20,7 @@
   },
   grids: [
     {
-      type: Number, //0 GRID OF ICON, 1 GRID OF PERSON
+      type: Number, //0 GRID OF ICON, 1 GRID OF PERSON, 2 grid of section
       elements: [
         {
           icon: String,

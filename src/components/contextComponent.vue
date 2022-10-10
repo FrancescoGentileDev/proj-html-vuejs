@@ -1,9 +1,10 @@
 <template>
   <article class="context">
     <img v-if="icon" :src="require(`@/assets/images/${icon}`)"
-          data-aos="zoom-out"
+          data-aos="fade-down"
       data-aos-anchor-placement="bottom-bottom"
       data-aos-duration="2000"
+      data-aos-delay="800"
       data-aos-once="true"
       data-aos-easing="ease-in-out"
     
@@ -14,7 +15,7 @@
       data-aos="slide-down"
       data-aos-anchor-placement="bottom-bottom"
       data-aos-duration="1000"
-      data-aos-delay="200"
+      data-aos-delay="1000"
       data-aos-once="true"
       data-aos-easing="ease-in"
     >
@@ -31,7 +32,7 @@
       data-aos="fade"
       data-aos-anchor-placement="bottom-bottom"
       data-aos-duration="1000"
-      data-aos-delay="400"
+      data-aos-delay="1000"
       data-aos-once="true"
       data-aos-easing="ease-out-quart"
     >

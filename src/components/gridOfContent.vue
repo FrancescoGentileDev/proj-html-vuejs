@@ -16,7 +16,7 @@
         v-for="(item, index) in grid"
         :key="index"
         v-bind="item"
-        data-aos="flip-right" data-aos-duration="1000"    :data-aos-delay="(index*200)" data-aos-once="true"
+        data-aos="flip-right" data-aos-duration="200"   :data-aos-delay="1000+(index*200)" data-aos-once="true"
       />
     </div>
     <div class="recursiveSection" v-else-if="type === 2">
@@ -26,6 +26,7 @@
         :key="index"
         v-bind="{top: item, background: item.background}"
         :noContainer="true"
+        data-aos="flip-left" data-aos-duration="1000"    :data-aos-delay="(index*100)" data-aos-once="true"
       />
     </div>
   </div>
@@ -59,7 +60,7 @@ export default {
  display: flex;
  flex-grow: 1;
  :deep(.context) {
-  max-width: inherit;
+  max-width: 100%;
   color: $band-text-color;
   padding: 1rem;
  }
