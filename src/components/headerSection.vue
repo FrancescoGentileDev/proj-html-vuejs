@@ -89,18 +89,6 @@ export default {
     transition: all .5 ease;
 }
 
-.title-enter-from,
-.title-leave-to {
-    
-}
-
-
-
-
-
-
-
-
 button {
   align-self: flex-start;
   background-color: $header-button-color;
