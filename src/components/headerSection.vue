@@ -59,6 +59,12 @@ export default {
       this.lastScroll = window.scrollY;
     });
   },
+  mounted(){
+    setTimeout(() => {
+      let nav = this.$refs.nav;
+      nav.style.top = "0px";
+    }, 1000);
+  },
   computed: {
     getTitle() {
       let separate = this.title.split("/");
@@ -113,7 +119,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  top: 0;
+  top: -110px;
   z-index: 10;
   transition: top 0.4s linear;
   &.addBackground {

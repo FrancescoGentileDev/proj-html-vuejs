@@ -24,7 +24,7 @@
         class="grid section"
         v-for="(item, index) in grid"
         :key="index"
-        v-bind="{top: item, background: item.background}"
+        v-bind="item"
         :noContainer="true"
       />
     </div>
