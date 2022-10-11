@@ -4,7 +4,7 @@
       <img class="logo" :src="require(`@/assets/images/${logo}`)" alt="" />
       <ul>
         <li v-for="(route, index) in routes" :key="index">
-          <a v-if="!route.button" :href="route.link">{{ route.text }}</a>
+          <a v-if="!route.button" :href="route.link" :class="{active: route.text === activeTab}">{{ route.text }}</a>
           <button v-else>
             <a :href="route.link"> {{ route.text }}</a>
           </button>
@@ -31,7 +31,7 @@
 export default {
   data() {
     return {
-      activeTab: "home",
+      activeTab: "Home",
       lastScroll: 0,
     };
   },
@@ -48,7 +48,7 @@ export default {
     window.addEventListener("scroll", () => {
       let nav = this.$refs.nav;
       let scroll = window.scrollY;
-      if (scroll >= 840) {
+      if (scroll >= 800) {
         nav.style.top = "-110px";
         if (this.lastScroll > scroll) nav.style.top = "0px";
         else nav.style.top = "-110px";
@@ -78,26 +78,10 @@ export default {
 <style lang="scss" scoped>
 @import "@/variables.scss";
 
-.title-enter-active,
-.title-leave-active {
-    transition: all .5 ease;
-}
-
-.title-enter-from,
-.title-leave-to {
-    
-}
-
-
-
-
-
-
-
 
 button {
   align-self: flex-start;
-  background-color: $header-button-color;
+  background-color: rgba($header-button-color, .7);
   font-weight: 200;
   border: none;
   padding: 1rem 3rem;
@@ -105,7 +89,11 @@ button {
     color: $white-color;
     text-decoration: none;
   }
+ &:hover {
+  background-color: $header-button-color
+ }
 }
+
 nav {
   padding: 1rem 3rem;
   position: fixed;
@@ -126,6 +114,9 @@ nav {
     a {
       text-decoration: none;
       color: $white-color;
+      &.active {
+        color: $brand-color
+      }
     }
   }
 }

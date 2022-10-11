@@ -4,7 +4,6 @@
           data-aos="fade-down"
       data-aos-anchor-placement="bottom-bottom"
       data-aos-duration="2000"
-      data-aos-delay="800"
       data-aos-once="true"
       data-aos-easing="ease-in-out"
     
@@ -105,6 +104,10 @@ export default {
       background-color: transparent;
       border: 3px solid $button-border-color;
       color: $button-text-color;
+      &:hover {
+        background-color: $button-border-color;
+        color: $black-color
+      }
     }
   }
 }

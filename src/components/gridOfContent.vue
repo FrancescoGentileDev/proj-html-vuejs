@@ -16,7 +16,7 @@
         v-for="(item, index) in grid"
         :key="index"
         v-bind="item"
-        data-aos="flip-right" data-aos-duration="200"   :data-aos-delay="1000+(index*200)" data-aos-once="true"
+        data-aos="flip-right" data-aos-duration="1000"   :data-aos-delay="600+(index*200)" data-aos-once="true"
       />
     </div>
     <div class="recursiveSection" v-else-if="type === 2">
